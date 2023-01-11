@@ -14,6 +14,9 @@ export default createStore ({
         },
         getAll(state) {
             return state.lessons;
+        },
+        getCurrentId(state){
+            return state.lessons.length + 1;
         }
     },
     mutations: {
@@ -22,7 +25,11 @@ export default createStore ({
         },
         changeVisibility(state) {
 			state.isOpenForm = !state.isOpenForm
-		}
+		},
+        addNewLesson(state, newLeson)
+        {
+            state.lessons.push(newLeson);
+        }
     },
     actions: {
         getData(context) {
@@ -31,6 +38,6 @@ export default createStore ({
             .then(response => {
                 (context.commit('setLessons', response.data))
             });
-          }
+        }
     }
 })  

@@ -1,5 +1,5 @@
 <template>
-	<div class="wrap">
+	<header class="header">
 		<div class="container__left">
 			<div class="inner">
 				<div class="logo">
@@ -30,7 +30,7 @@
 
 			
 
-  	</div>
+  	</header>
 </template>
 
 <script>
@@ -84,7 +84,7 @@ export default {
 	text-align: center;
 }
 
-.wrap
+.header
 {
 	display: flex;
 	align-items: center;

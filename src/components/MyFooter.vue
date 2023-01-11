@@ -1,5 +1,5 @@
 <template>
-    <div class="wrap">
+    <footer class="footer">
         <router-link 
                 class="menu-item__button" 
                 :to="{ name: 'main'}" 
@@ -12,7 +12,7 @@
             >
                 Курсы
         </router-link>
-    </div>
+    </footer>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-.wrap
+.footer
 {
     display: flex;
     justify-content: right;

@@ -1,11 +1,11 @@
 <template>
   	<MyHeader></MyHeader>
-	<div class="main-container">
+	<main class="main-container">
 		<LeftMenu></LeftMenu>
 		<div class="router-container">
 			<router-view></router-view>
 		</div>
-	</div>
+	</main>
 	<MyFooter></MyFooter>
   
 </template>
