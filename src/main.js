@@ -1,10 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import store from './store'
 import router from '@/router/router'
-import store from '@/store';
+
+
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+
 
 
 createApp(App)
-    .use(router)
-    .use(store)
-    .mount('#app')
+  .use(store)
+  .use(router)
+  .mount('#app')

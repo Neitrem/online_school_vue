@@ -1,7 +1,7 @@
 <template>
    <div class="modal-window">
             <h2 class="title">Запись на курс</h2>
-            <form action="post" class="join-form">
+            <form @submit.prevent class="join-form">
                 <div class="inp">
                     <p class="inp__description">Введите ваше имя:</p>
                     <input type="text" class="inp__text" placeholder="Ваше имя" name="name">
@@ -12,16 +12,14 @@
                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="inp__text" placeholder="+7 900 900 90 90" name="phone_number">
                 </div>
 
-                <button @click="this.$store.commit('changeVisibility')" type="submit" class="modal-submit-btn">Отправить</button>
+                <button @click="this.$store.commit('changeVisibility')"  class="modal-submit-btn btn btn-primary">Отправить</button>
             </form>
         </div>
 </template>
 
 <script>
 export default {
-    beforeUnmount() {
-        this.$store.commit('changeVisibility')
-    }
+    
 }
 </script>
 
@@ -81,7 +79,7 @@ export default {
 
     border: #1e88e5 1px solid;
     border-radius: 15px;
-
+    
     padding-left: 10px;
 }
 
@@ -90,7 +88,7 @@ export default {
     font-size: 20px;
 
     width: 80%;
-    height: 30px;
+    line-height: 30px;
     border: none;
     background: #1e88e5;
 

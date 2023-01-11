@@ -17,10 +17,10 @@
             
         </section>
         <router-link 
-                class="to-lessons-btn" 
+                class="to-lessons-btn btn btn-primary" 
                 :to="{ name: 'lessonsList'}" 
             >
-                Посмотреть курсы
+            Посмотреть курсы
         </router-link>
         
     </div>
@@ -54,7 +54,6 @@ export default {
     background: #1e88e5;
     margin: 40px auto 40px auto;
 
-    height: 40px;
     line-height: 40px;
     text-align: center;
 
@@ -120,8 +119,8 @@ export default {
         margin: 20px;
         height: 200px;
     }
-    .img{
-     display: none;
+    .medium-img{
+        display: none;
     }
 
     .left

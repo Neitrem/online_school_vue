@@ -7,7 +7,7 @@
                             class="menu-item__button" 
                             :to="{ name: 'main'}" 
                         >
-                            Главная
+                        <button type="button" class="btn btn-primary menu-item__button">Главная</button>
                     </router-link>
                 </li>
                 <li class="menu-item">
@@ -15,7 +15,7 @@
                             class="menu-item__button" 
                             :to="{ name: 'lessonsList'}" 
                         >
-                            Курсы
+                        <button type="button" class="btn btn-primary menu-item__button">Курсы</button>
                     </router-link>
                 </li>
                 
@@ -42,15 +42,15 @@ export default {
 {
     margin: 80px auto 80px auto;
     list-style: none;
-    width: 200px;
+    width: 300px;
     
 }
 
 .menu-item
 {
     display: flex;
-    background-color: #1e88e5;
-    height: 100px;
+    
+    width: 200px;
     margin: 20px;
     align-items: center;
     justify-content: center;
@@ -63,8 +63,11 @@ export default {
     color: #fff;
     text-decoration: none;
     
+    background: #1e88e5;
+    border-color: #1e88e5;
+    border-radius: 15px;
+
     width: 100%;
-    height: 100px;
     line-height: 100px;
     text-align: center;
 }

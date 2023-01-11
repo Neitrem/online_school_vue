@@ -53,6 +53,8 @@ export default {
     align-items: center;
     justify-content: center;
 
+    color: #000;
+
 }
 
 .lesson__img
@@ -68,5 +70,7 @@ export default {
     font-size: 11px;
 
     height: 50px;
+
+    text-decoration: none;
 }
 </style>

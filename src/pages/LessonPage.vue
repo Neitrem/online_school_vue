@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        <ModalWindow v-if="this.$store.state.isOpenForm"></ModalWindow>
+        <ModalWindow v-show="this.$store.state.isOpenForm"></ModalWindow>
         <h2 v-if="lesson" class="name">
             {{ lesson.name }}
         </h2>
@@ -8,7 +8,7 @@
             <p v-if="lesson" class="cost param">Цена: <span class="value">{{ lesson.cost }}</span> р.</p>
             <p v-if="lesson" class="duration param">Продолжительность: <span class="value">{{ lesson.duration }} </span>мес.</p>
         </div>
-        <button @click="this.$store.commit('changeVisibility')" class="join">Записаться</button>
+        <button @click="this.$store.commit('changeVisibility')" class="join btn btn-primary">Записаться</button>
         <div v-if="lesson" class="description">
             <p class="description__text">{{ lesson.description }}</p>
             <img src="@/assets/lesson-preview.png" class="medium-img" alt="">
@@ -20,7 +20,7 @@
                 
             </div>
         </div>
-        <button @click="this.$store.commit('changeVisibility')" class="join">Записаться</button>
+        <button @click="this.$store.commit('changeVisibility')" class="join btn btn-primary">Записаться</button>
         <MyReviewsList></MyReviewsList>
     </div>
 </template>
@@ -29,7 +29,6 @@
 
 import MyReviewsList from '@/components/MyReviewsList.vue'
 import ModalWindow from '@/components/ModalWindow.vue'
-import { thisTypeAnnotation } from '@babel/types'
 
 export default {
     data () {
@@ -42,18 +41,19 @@ export default {
     },
     methods: {
         setLesson() {
-            this.lesson = this.getLesson;
+                this.lesson = this.$store.getters.getById(this.$route.params.id);
         }
     },
-    computed: {
-        getLesson() {
-            console.log(this.$route.params.id)
-
-            return this.$store.getters.getById(this.$route.params.id)
-        }
+    beforeMount () {
+        this.setLesson();
     },
     mounted() {
-        this.setLesson();
+        this.lesson = this.$store.getters.getById(this.$route.params.id);
+    },
+    beforeUnmount() {
+        if(this.$store.state.isOpenForm){
+            this.$store.commit('changeVisibility')
+        }
     }
 }
 </script>
@@ -121,6 +121,13 @@ export default {
 {
     margin-right: 80px;
 }
+@media (max-width: 1667px)
+{
+    .medium-img
+    {
+        display: none;
+    }
+}
 
 .description__text
 {
@@ -159,7 +166,6 @@ export default {
     border-radius: 15px;
 
     padding: 5px;
-    height: 30px;
 }
 
 

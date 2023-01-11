@@ -20,13 +20,17 @@ const routes = [
     {
         path: '/lessons/:id',
         name: "lesson",
-        component: LessonPage
+        component: LessonPage,
+        
     }
 ]
 
 const router = createRouter({
     routes,
-    history: createWebHistory (process.env.BASE_URL)
+    history: createWebHistory (process.env.BASE_URL),
+    scrollBehavior() {
+        return { top: 0 };
+      },
 })
 
 export default router;

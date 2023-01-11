@@ -26,7 +26,7 @@ export default {
             this.$store.dispatch('getData');
         }
 	},
-	beforeMount(){
+	created(){
 		this.getNewData();
 	}
 }
@@ -59,6 +59,9 @@ h2 {
 	margin-inline-start: 0px;
 	margin-inline-end: 0px;
 	padding-inline-start: 0;
+
+	
+	text-decoration: none  !important;
 }
 
 .medium-img
